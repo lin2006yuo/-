@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- BEGIN content -->
+    <div class="out">
+      <div style="display: flex">
+        <canvas id="drawOnMe" width="600" height="600" style="border: 1px solid #000"> </canvas>
+        <!-- <canvas id="app" width="600" height="600" style="border: 1px solid #000"> </canvas> -->
+      </div>
+      <div><span>friction</span><input id="__friction" type="number" /></div>
+      <div><span>springFactor</span><input id="__springFactor" type="number" /></div>
+
+      <button id="blue">blue</button>
+    </div>
+    <!-- END content -->
+    <!-- BEGIN scripts -->
+    <script src="./start/ball.js"></script>
+    <script src="./start/mouse.js"></script>
+    <script src="./start/app.js"></script>
+
+    <!-- <script src="./app/index.js"></script> -->
+    <script>
+      let $__friction = document.getElementById("__friction")
+      $__friction.value = __friction
+      $__friction.addEventListener("input", (e) => {
+        __friction = Number(e.target.value)
+      })
+      let $__springFactor = document.getElementById("__springFactor")
+      $__springFactor.addEventListener("input", (e) => {
+        __springFactor = Number(e.target.value)
+      })
+      $__springFactor.value = __springFactor
+    </script>
+    <!-- END scripts -->
+  </body>
+</html>
