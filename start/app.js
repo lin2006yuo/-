@@ -78,6 +78,21 @@ function ConnectDots4(balls) {
 	// ctx.fill();
 }
 
+function ConnectDots5(balls) {
+	ctx.save()
+	ctx.strokeStyle = '#0000ff'
+	ctx.beginPath();
+	ctx.moveTo(balls[0].x, balls[0].y);
+	balls.forEach(ball => {
+		ctx.lineTo(ball.x, ball.y);
+	});
+
+	ctx.closePath();
+	ctx.stroke()
+	ctx.restore()
+	// ctx.fill();
+}
+
 function Render() {
 	window.requestAnimationFrame(Render);
 	ctx.clearRect(0, 0, 600, 600);
@@ -94,7 +109,7 @@ function Render() {
 	});
 	ConnectDots3(balls);
 	if (drawBlueLine) {
-		ConnectDots4(balls)
+		ConnectDots5(dots.map(d => d.ball))
 	}
 
 }
